@@ -11,9 +11,8 @@ class Quiz extends StatefulWidget {
   }
 }
 
-
 class _QuizState extends State<Quiz> {
-  // One method of changing Screen
+  // 1st method of changing Screen
   // Widget? activeScreen;
 
   // @override
@@ -26,36 +25,64 @@ class _QuizState extends State<Quiz> {
   //   setState(() {
   //     activeScreen = const QuestionsScreen();
   //   });
-    
+
   // }
 
-  //Another Method
- var activeScreen = 'start-screen';
-  
+  //2nd Method
+  var activeScreen = 'start-screen';
+
   void switchScreen() {
     setState(() {
       activeScreen = 'questions-screen';
     });
-    
   }
 
+  // @override
+  // Widget build(BuildContext context) {
+  //   return MaterialApp(
+  //     debugShowCheckedModeBanner: false,
+  //     home: Scaffold(
+  //       body: Container(
+  //         decoration: const BoxDecoration(
+  //             gradient: LinearGradient(
+  //                 colors: [Color.fromARGB(255, 0, 103, 151), Colors.blue],
+  //                 begin: Alignment.topLeft,
+  //                 end: Alignment.bottomRight)),
+  //         //1st method
+  //         // child: activeScreen,
+  //         //2nd Method
+  //         child: activeScreen == 'start-screen'
+  //             ? StartScreen(switchScreen)
+  //             : const QuestionsScreen(), // this is comparison operator ,
+  //         // here the child is execting a widget type
+  //       ),
+  //     ),
+  //   );
+  // }
+  //3rd method
 
   @override
   Widget build(BuildContext context) {
+    Widget screenWidget = StartScreen(switchScreen);
+    if (activeScreen == 'questions-screen') {
+      screenWidget = const QuestionsScreen();
+    }
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Container(
           decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                  colors: [Color.fromARGB(255, 0, 103, 151), Colors.blue],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight)),
-                  //One method
+            gradient: LinearGradient(
+                colors: [Color.fromARGB(255, 0, 103, 151), Colors.blue],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter),
+          ),
+          //One method
           // child: activeScreen,
           //Another Method
-          child: activeScreen=='start-screen', // this is comparison operator ,
-          // here the child is execting a widget type 
+          child: screenWidget, // this is comparison operator ,
+          // here the child is execting a widget type
         ),
       ),
     );
