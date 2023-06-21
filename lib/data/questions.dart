@@ -1,7 +1,8 @@
 import 'package:quiz_app/models/quiz_questions.dart';
 
+//This list is created from the QuizQuestion class
 const questions = [
- QuizQuestion(
+  QuizQuestion(
     'What are the main building blocks of Flutter UIs?',
     [
       'Widgets',
@@ -10,12 +11,15 @@ const questions = [
       'Functions',
     ],
   ),
-  QuizQuestion('How are Flutter UIs built?', [
-    'By combining widgets in code',
-    'By combining widgets in a visual editor',
-    'By defining widgets in config files',
-    'By using XCode for iOS and Android Studio for Android',
-  ]),
+  QuizQuestion(
+    'How are Flutter UIs built?',
+    [
+      'By combining widgets in code',
+      'By combining widgets in a visual editor',
+      'By defining widgets in config files',
+      'By using XCode for iOS and Android Studio for Android',
+    ],
+  ),
   QuizQuestion(
     'What\'s the purpose of a StatefulWidget?',
     [
@@ -50,6 +54,60 @@ const questions = [
       'By calling updateData()',
       'By calling updateUI()',
       'By calling updateState()',
+    ],
+  ),
+  QuizQuestion(
+    'What is the capital of JavaScript?',
+    [
+      'None (JavaScript is a programming language)',
+      'London',
+      'Paris',
+      'Berlin',
+    ],
+  ),
+  QuizQuestion(
+    'What does CSS stand for?',
+    [
+      'Cascading Style Sheets',
+      'Central Style System',
+      'Creative Styling Solutions',
+      'Computer Style Specifications',
+    ],
+  ),
+  QuizQuestion(
+    'Which programming language is used to build iOS apps?',
+    [
+      'Swift',
+      'Java',
+      'C#',
+      'Python',
+    ],
+  ),
+  QuizQuestion(
+    'What is the default file extension for Python files?',
+    [
+      '.py',
+      '.js',
+      '.html',
+      '.cpp',
+    ],
+  ),
+  QuizQuestion(
+    'What does MVC stand for in the context of software architecture?',
+    [
+      'Model-View-Controller',
+      'Most Valuable Code',
+      'Modern View Configuration',
+      'Managed Virtual Components',
+    ],
+  ),
+  QuizQuestion(
+    'Which symbol is used to indicate single-line comments in many programming languages?',
+    [
+      '//',
+      '/* */',
+      '#',
+      '--',
     ],
   ),
 ];

@@ -44,29 +44,29 @@ class ResultsScreen extends StatelessWidget {
           children: [
             Text(
               'You answered $numCorrectQuestion out of $numTotalQuestions questions correctly!',
-              style: GoogleFonts.lato(color: const Color.fromARGB(255, 0, 0, 0),
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
+              style: GoogleFonts.lato(
+                color: const Color.fromARGB(255, 0, 0, 0),
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
               ),
               textAlign: TextAlign.center,
             ),
-            const SizedBox(
-              height: 30,
-            ),
+            // const SizedBox(
+            //   height: 30,
+            // ),
             QuestionSummary(summaryData),
-            const SizedBox(
-              height: 30,
-            ),
+            // const SizedBox(
+            //   height: 30,
+            // ),
             TextButton.icon(
               onPressed: onRestart,
               style: TextButton.styleFrom(
                 foregroundColor: Colors.white,
-              
+                
               ),
+              
               icon: const Icon(Icons.refresh),
               label: const Text('Restart Quiz!'),
-
-              
             )
           ],
         ),

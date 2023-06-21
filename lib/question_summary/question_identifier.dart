@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-
+// this for the left index 
+// if the answer is right the circle would be green 
+// if wrong the circle would be red
 class QuestionIdentifier extends StatelessWidget {
   const QuestionIdentifier({
     super.key,
@@ -17,7 +19,7 @@ class QuestionIdentifier extends StatelessWidget {
       height: 30,
       alignment: Alignment.center,
       decoration: BoxDecoration(
-        color: isCorrectAnswer ? Colors.greenAccent : Colors.redAccent,
+        color: isCorrectAnswer ? Colors.greenAccent : Colors.redAccent, // this is the condition which will set the color
         borderRadius: BorderRadius.circular(100),
       ),
       child: Text(

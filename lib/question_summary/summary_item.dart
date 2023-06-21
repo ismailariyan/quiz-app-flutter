@@ -11,9 +11,9 @@ class SummaryItem extends StatelessWidget {
     final isCorrectAnswer =
         itemData['user_answer'] == itemData['correct_answer'];
 
-    return  Padding(
+    return Padding(
         padding: const EdgeInsets.symmetric(
-          vertical: 10,
+          vertical: 7,
         ),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -23,29 +23,36 @@ class SummaryItem extends StatelessWidget {
               questionIndex: itemData['question_index'] as int,
             ),
             const SizedBox(width: 20),
-            Expanded(child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  itemData['question'] as String,
-                  style: GoogleFonts.lato(
-                    color: Colors.white,
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    itemData['question'] as String,
+                    style: GoogleFonts.lato(
+                      color: Colors.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                ),
-                const SizedBox(height: 5,),
-                Text(itemData['user_answer'] as String,
-                style: const TextStyle(
-                  color: Colors.black,
-
-                ),),
-                Text(itemData['correct_answer'] as String,
-                style: const TextStyle(
-                  color: Color.fromARGB(255, 11, 229, 80),
-                ), )
-              ],
-            ),)
+                  const SizedBox(
+                    height: 5,
+                  ),
+                  Text(
+                    itemData['user_answer'] as String,
+                    style: const TextStyle(
+                      color: Colors.black,
+                    ),
+                  ),
+                  Text(
+                    itemData['correct_answer'] as String,
+                    style: const TextStyle(
+                      color: Color.fromARGB(255, 11, 229, 80),
+                    ),
+                  )
+                ],
+              ),
+            )
           ],
         ));
   }

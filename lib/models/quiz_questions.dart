@@ -1,3 +1,5 @@
+// This is the model class for the questions
+// essentially creating  a new type of data structure to store the question
 class QuizQuestion {
   const QuizQuestion(this.text, this.answers);
   final String text;
