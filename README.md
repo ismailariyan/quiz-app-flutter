@@ -1,4 +1,4 @@
-# Quiz App made with Fullter
+# Quiz App made with Flutter
 
 This is quiz application mainly made for android and ios
 

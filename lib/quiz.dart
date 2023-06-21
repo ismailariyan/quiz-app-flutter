@@ -81,7 +81,16 @@ class _QuizState extends State<Quiz> {
 
   @override
   Widget build(BuildContext context) {
+    // initially the acitvescreen is set to start-screen
+    // but when the Start Quiz is preed the changes to question-screen and when all the questions ran out
+    // it goes to the result screen 
     Widget screenWidget = StartScreen(switchScreen);
+/*  eikhane amr 3ta screen e ase and 3tai bolte gele quiz er child screen so quiz screen sobar upore ase
+>>StartScreen
+>>QuestionsScreen
+>>ResultsScreen
+
+*/
     if (activeScreen == 'questions-screen') {
       screenWidget = QuestionsScreen(onSelectAnswer: chooseAnswer);
     } else if (activeScreen == 'results-screen') {
@@ -90,6 +99,8 @@ class _QuizState extends State<Quiz> {
         onRestart: restartQuiz,
       );
     }
+
+
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -101,10 +112,7 @@ class _QuizState extends State<Quiz> {
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter),
           ),
-          //One method
-          // child: activeScreen,
-          //Another Method
-          child: screenWidget, // this is comparison operator ,
+          child: screenWidget,
           // here the child is execting a widget type
         ),
       ),

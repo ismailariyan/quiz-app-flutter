@@ -14,10 +14,12 @@ class QuestionsScreen extends StatefulWidget {
   }
 }
 
+// we passing the list of user_answer to the quiz class where we have list selectedanswer
+// which is storing all the answer
 class _QuestionsScreenState extends State<QuestionsScreen> {
   var currentQuestionIndex = 0;
   void answerQuestion(String selectedAnswer) {
-widget.onSelectAnswer(selectedAnswer);
+    widget.onSelectAnswer(selectedAnswer);
     setState(() {
       currentQuestionIndex++;
     });
@@ -38,7 +40,7 @@ widget.onSelectAnswer(selectedAnswer);
           children: [
             Text(
               currentQuestion.text,
-              style:GoogleFonts.lato(
+              style: GoogleFonts.lato(
                 color: Colors.white,
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
@@ -49,18 +51,18 @@ widget.onSelectAnswer(selectedAnswer);
               height: 30,
             ),
             ...currentQuestion.getShuffledAnswers().map((answer) {
+              // here the spread operator is used to pull out the widgets from this list into th main list as the
+              //children accpets list of widgets i cant accpet list within a list
+              // [Text,sizedBox,[AnswerButton widgets,AnswerButton widgets],Other things] <<== this is not ACCEPTED
+              // using the Spread oparator we convert this into
+              // [Text,sizedBox,AnswerButton widgets,AnswerButton widgets,Other things] <<== this ACCEPTED
               return AnswerButton(
                 answerText: answer,
-                onTap: (){
+                onTap: () {
                   answerQuestion(answer);
                 },
               );
             }),
-            // here the spread operator is used to pull out the widgets from this list into th main list as the
-            //children accpets list of widgets i cant accpet list within a list
-            // [Text,sizedBox,[AnswerButton widgets,AnswerButton widgets],Other things] <<== this is not ACCEPTED
-            // using the Spread oparator we convert this into
-            // [Text,sizedBox,AnswerButton widgets,AnswerButton widgets,Other things] <<== this ACCEPTED
           ],
         ),
       ),

@@ -33,6 +33,7 @@ class ResultsScreen extends StatelessWidget {
     final summaryData = getSummaryData();
     final numTotalQuestions = questions.length;
     final numCorrectQuestion = summaryData.where((element) {
+      //this where return a new list which maintain the condition
       return element['user_answer'] == element['correct_answer'];
     }).length;
     return SizedBox(
@@ -60,11 +61,7 @@ class ResultsScreen extends StatelessWidget {
             // ),
             TextButton.icon(
               onPressed: onRestart,
-              style: TextButton.styleFrom(
-                foregroundColor: Colors.white,
-                
-              ),
-              
+              style: TextButton.styleFrom(foregroundColor: Colors.white),
               icon: const Icon(Icons.refresh),
               label: const Text('Restart Quiz!'),
             )
