@@ -18,7 +18,9 @@ class QuestionsScreen extends StatefulWidget {
 // which is storing all the answer
 class _QuestionsScreenState extends State<QuestionsScreen> {
   var currentQuestionIndex = 0;
+
   void answerQuestion(String selectedAnswer) {
+    //this widget is from the State class which give you acces to the widget class
     widget.onSelectAnswer(selectedAnswer);
     setState(() {
       currentQuestionIndex++;
