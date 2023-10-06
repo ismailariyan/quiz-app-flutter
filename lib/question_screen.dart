@@ -15,7 +15,7 @@ class QuestionsScreen extends StatefulWidget {
 }
 
 // we passing the list of user_answer to the quiz class where we have list selectedanswer
-// which is storing all the answer
+// which is storing all the answer..
 class _QuestionsScreenState extends State<QuestionsScreen> {
   var currentQuestionIndex = 0;
 
